@@ -74,6 +74,13 @@ describe('When I want to convert arabic numbers to roman numerals',function(){
 			romanNumeral = romanNumeralGenerator.generate(90);
 		assert.equal(romanNumeral,'XC');
 	});
+
+	it('and that number is 4 then the roman is IV',function(){
+		var romanNumeralGenerator = new RomanNumeralGenerator(),
+			romanNumeral = romanNumeralGenerator.generate(4);
+		assert.equal(romanNumeral,'IV');
+	});
+
 });
 
 var RomanNumeralGenerator = function(){
@@ -102,6 +109,7 @@ var RomanNumeralRepository = function(){
 		{arabic: 40, roman: 'XL'},
 		{arabic: 10, roman: 'X'},
 		{arabic: 5, roman: 'V'},
+		{arabic: 4, roman: 'IV'},
 		{arabic: 1, roman: 'I'},
 	];
 
