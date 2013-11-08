@@ -20,13 +20,20 @@ describe('When I want to convert arabic numbers to roman numerals',function(){
 			romanNumeral = romanNumeralGenerator.generate(10);
 		assert.equal(romanNumeral,'X');
 	});
+
+	it('and that number is 20 then the roman is XX',function(){
+		var romanNumeralGenerator = new RomanNumeralGenerator(),
+			romanNumeral = romanNumeralGenerator.generate(20);
+		assert.equal(romanNumeral,'XX');
+	});
 });
 
 var RomanNumeralGenerator = function(){
 	var ROMAN_NUMERALS = {
 		1: 'I',
 		5: 'V',
-		10: 'X'
+		10: 'X',
+		20: 'XX'
 	};
 
 	function generate(number){
