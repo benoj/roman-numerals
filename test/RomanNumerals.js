@@ -30,10 +30,10 @@ describe('When I want to convert arabic numbers to roman numerals',function(){
 
 var RomanNumeralGenerator = function(){
 	var ROMAN_NUMERALS = {
-		1: 'I',
-		5: 'V',
+		20: 'XX',
 		10: 'X',
-		20: 'XX'
+		5: 'V',
+		1: 'I'
 	};
 
 	function generate(number){
