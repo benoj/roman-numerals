@@ -35,7 +35,7 @@ describe('When I want to convert arabic numbers to roman numerals',function(){
 
 	it('and that number is 40 then the roman is XL',function(){
 		var romanNumeralGenerator = new RomanNumeralGenerator(),
-			romanNumeral = romanNumeralGenerator.generate(50);
+			romanNumeral = romanNumeralGenerator.generate(40);
 		assert.equal(romanNumeral,'XL');
 	});
 });
@@ -57,6 +57,7 @@ var RomanNumeralGenerator = function(){
 var RomanNumeralRepository = function(){
 	var ROMAN_NUMERALS = [
 		{arabic: 50, roman: 'L'},
+		{arabic: 40, roman: 'XL'},
 		{arabic: 10, roman: 'X'},
 		{arabic: 5, roman: 'V'},
 		{arabic: 1, roman: 'I'},
