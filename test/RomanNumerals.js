@@ -20,11 +20,16 @@ var RomanNumeralGenerator = function(){
 	var ROMAN_ONE = 'I',
 		ROMAN_FIVE = 'V';
 
+	var ROMAN_NUMERALS = {
+		1: 'I',
+		5: 'V'
+	};
+
 	function generate(number){
 		if(number === 5){
 			return ROMAN_FIVE;
 		}	
-		return ROMAN_ONE;
+		return ROMAN_NUMERALS[number];
 	}
 
 	return{
