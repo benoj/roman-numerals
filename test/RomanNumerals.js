@@ -38,10 +38,13 @@ var RomanNumeralGenerator = function(){
 
 	function generate(number){
 		for(var i =0; i <= ROMAN_NUMERALS.length; i++){
-			if(ROMAN_NUMERALS[i].arabic === number ){
-				return ROMAN_NUMERALS[i].roman;
+			var romanNumeral = ROMAN_NUMERALS[i];
+			if(romanNumeral && romanNumeral.arabic <= number ){
+				return romanNumeral.roman + generate(number - romanNumeral.arabic);
 			}
+			
 		}
+		return '';
 	}
 
 	return{
