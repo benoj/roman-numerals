@@ -36,12 +36,9 @@ var RomanNumeralGenerator = function(){
 	];
 
 	function generate(number){
-		for(var i =0; i <= ROMAN_NUMERALS.length; i++){
-			var romanNumeral = ROMAN_NUMERALS[i];
-			if(romanNumeral && romanNumeral.arabic <= number ){
-				return romanNumeral.roman + generate(number - romanNumeral.arabic);
-			}
-			
+		var romanNumeral = new RomanNumeralRepository().findClosest(number);
+		if(romanNumeral){
+			return romanNumeral + generate(number - romanNumeral.arabic);
 		}
 		return '';
 	}
@@ -50,3 +47,24 @@ var RomanNumeralGenerator = function(){
 		generate: generate
 	};
 };
+
+var RomanNumealRepository = function(){
+	var ROMAN_NUMERALS = [
+		{arabic: 10, roman: 'X'},
+		{arabic: 5, roman: 'V'},
+		{arabic: 1, roman: 'I'},
+	];
+
+	function findClosest(number){
+		for(var i =0; i <= ROMAN_NUMERALS.length; i++){
+			var romanNumeral = ROMAN_NUMERALS[i];
+			if(romanNumeral.arabic <= number ){
+				return romanNumeral.roman;
+			}
+		}
+	}
+
+	return{
+		findClosest: findClosest
+	};
+}
