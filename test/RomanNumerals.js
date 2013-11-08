@@ -38,7 +38,7 @@ var RomanNumeralGenerator = function(){
 	function generate(number){
 		var romanNumeral = new RomanNumeralRepository().findClosest(number);
 		if(romanNumeral){
-			return romanNumeral + generate(number - romanNumeral.arabic);
+			return romanNumeral.roman + generate(number - romanNumeral.arabic);
 		}
 		return '';
 	}
@@ -48,7 +48,7 @@ var RomanNumeralGenerator = function(){
 	};
 };
 
-var RomanNumealRepository = function(){
+var RomanNumeralRepository = function(){
 	var ROMAN_NUMERALS = [
 		{arabic: 10, roman: 'X'},
 		{arabic: 5, roman: 'V'},
@@ -58,8 +58,8 @@ var RomanNumealRepository = function(){
 	function findClosest(number){
 		for(var i =0; i <= ROMAN_NUMERALS.length; i++){
 			var romanNumeral = ROMAN_NUMERALS[i];
-			if(romanNumeral.arabic <= number ){
-				return romanNumeral.roman;
+			if(romanNumeral && romanNumeral.arabic <= number ){
+				return romanNumeral;
 			}
 		}
 	}
