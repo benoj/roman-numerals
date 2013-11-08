@@ -32,6 +32,12 @@ describe('When I want to convert arabic numbers to roman numerals',function(){
 			romanNumeral = romanNumeralGenerator.generate(50);
 		assert.equal(romanNumeral,'L');
 	});
+
+	it('and that number is 40 then the roman is XL',function(){
+		var romanNumeralGenerator = new RomanNumeralGenerator(),
+			romanNumeral = romanNumeralGenerator.generate(50);
+		assert.equal(romanNumeral,'XL');
+	});
 });
 
 var RomanNumeralGenerator = function(){
