@@ -1,0 +1,25 @@
+{
+        "name": "BBC-roman-numerals",
+        "description": "Roman Numerals Kata",
+        "author": "Ben Flowers",
+        "version": "0.0.0",
+  "repository" : { 
+    "type" : "git", 
+    "url" : "https://github.com/benoj/roman-numerals"
+    },
+        "licenses": [{
+          "type": "MIT"
+        }],
+        "directories": {
+          "lib": "./lib"
+        },
+        "dependencies": {
+        },
+  "devDependencies":{
+     "mocha": "*",
+     "assert": "*"
+  },
+  "scripts":{
+  	"test": "./node_modules/mocha/bin/mocha"
+  }
+}
