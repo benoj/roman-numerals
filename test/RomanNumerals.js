@@ -8,12 +8,21 @@ describe('When I want to convert arabic numbers to roman numerals',function(){
 			romanNumeral = romanNumeralGenerator.generate(1);
 		assert.equal(romanNumeral,'I');
 	});
+
+	it('and that number is 5 then the roman is V',function(){
+		var romanNumeralGenerator = new RomanNumeralGenerator(),
+			romanNumeral = romanNumeralGenerator.generate(5);
+		assert.equal(romanNumeral,'V');
+	});
 });
 
 var RomanNumeralGenerator = function(){
 	var ROMAN_ONE = 'I';
 
-	function generate(){
+	function generate(number){
+		if(number === 5){
+			return 'V'
+		}	
 		return ROMAN_ONE;
 	}
 
