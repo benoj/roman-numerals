@@ -11,9 +11,13 @@ describe('When I want to convert arabic numbers to roman numerals',function(){
 });
 
 var RomanNumeralGenerator = function(){
+	var ROMAN_ONE = 'I';
+
+	function generate(){
+		return ROMAN_ONE;
+	}
+
 	return{
-		generate: function(){
-			return 'I';
-		}
+		generate: generate
 	};
 };
