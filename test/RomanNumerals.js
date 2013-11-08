@@ -104,8 +104,10 @@ describe('When I want to convert arabic numbers to roman numerals',function(){
 });
 
 var RomanNumeralGenerator = function(){
+	var invalidNumberSpecification = new InvalidNumberSpecification();
+
 	function generate(number){
-		if(number < 1 || number > 3999){
+		if(invalidNumberSpecification.isSatisfiedby(number)){
 			throw new Error("Only numbers between 1 and 3999 may be converted");
 		}
 		return generateRoman(number);
@@ -123,6 +125,15 @@ var RomanNumeralGenerator = function(){
 		generate: generate
 	};
 };
+
+var InvalidNumberSpecification = function(){
+	function isSatisfiedby(number){
+		return (number < 1 || number > 3999);
+	}
+	return{
+		isSatisfiedby:isSatisfiedby
+	};
+}
 
 var RomanNumeralRepository = function(){
 	var ROMAN_NUMERALS = [
