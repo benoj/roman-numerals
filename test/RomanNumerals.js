@@ -26,6 +26,12 @@ describe('When I want to convert arabic numbers to roman numerals',function(){
 			romanNumeral = romanNumeralGenerator.generate(20);
 		assert.equal(romanNumeral,'XX');
 	});
+
+	it('and that number is 50 then the roman is L',function(){
+		var romanNumeralGenerator = new RomanNumeralGenerator(),
+			romanNumeral = romanNumeralGenerator.generate(50);
+		assert.equal(romanNumeral,'L');
+	});
 });
 
 var RomanNumeralGenerator = function(){
@@ -44,6 +50,7 @@ var RomanNumeralGenerator = function(){
 
 var RomanNumeralRepository = function(){
 	var ROMAN_NUMERALS = [
+		{arabic: 50, roman: 'L'},
 		{arabic: 10, roman: 'X'},
 		{arabic: 5, roman: 'V'},
 		{arabic: 1, roman: 'I'},
