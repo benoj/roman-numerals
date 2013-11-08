@@ -62,6 +62,12 @@ describe('When I want to convert arabic numbers to roman numerals',function(){
 			romanNumeral = romanNumeralGenerator.generate(900);
 		assert.equal(romanNumeral,'CM');
 	});
+
+	it('and that number is 400 then the roman is CD',function(){
+		var romanNumeralGenerator = new RomanNumeralGenerator(),
+			romanNumeral = romanNumeralGenerator.generate(400);
+		assert.equal(romanNumeral,'CD');
+	});
 });
 
 var RomanNumeralGenerator = function(){
@@ -83,6 +89,7 @@ var RomanNumeralRepository = function(){
 		{arabic: 1000, roman: 'M'},
 		{arabic: 900, roman: 'CM'},
 		{arabic: 500, roman: 'D'},
+		{arabic: 400, roman: 'CD'},
 		{arabic: 100, roman: 'C'},
 		{arabic: 50, roman: 'L'},
 		{arabic: 40, roman: 'XL'},
