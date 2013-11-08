@@ -26,9 +26,6 @@ var RomanNumeralGenerator = function(){
 	};
 
 	function generate(number){
-		if(number === 5){
-			return ROMAN_FIVE;
-		}	
 		return ROMAN_NUMERALS[number];
 	}
 
