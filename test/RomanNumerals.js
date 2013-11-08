@@ -81,13 +81,27 @@ describe('When I want to convert arabic numbers to roman numerals',function(){
 		assert.equal(romanNumeral,'IV');
 	});
 
+	// it('and that number is 0 then an error is thrown',function(){
+	// 	var romanNumeralGenerator = new RomanNumeralGenerator();
+
+	// 	assert.throws(function(){
+	// 		romanNumeralGenerator.generate(0);
+	// 		},
+	// 		/Only numbers between 1 and 3999 may be converted/
+	// 	);
+	// })
+
 });
 
 var RomanNumeralGenerator = function(){
 	function generate(number){
+		return generateRoman(number);
+	}
+
+	function generateRoman(number){
 		var romanNumeral = new RomanNumeralRepository().findClosest(number);
 		if(romanNumeral){
-			return romanNumeral.roman + generate(number - romanNumeral.arabic);
+			return romanNumeral.roman + generateRoman(number - romanNumeral.arabic);
 		}
 		return '';
 	}
