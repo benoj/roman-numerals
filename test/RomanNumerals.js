@@ -29,15 +29,19 @@ describe('When I want to convert arabic numbers to roman numerals',function(){
 });
 
 var RomanNumeralGenerator = function(){
-	var ROMAN_NUMERALS = {
-		20: 'XX',
-		10: 'X',
-		5: 'V',
-		1: 'I'
-	};
+	var ROMAN_NUMERALS = [
+		{arabic: 20, roman: 'XX'},
+		{arabic: 10, roman: 'X'},
+		{arabic: 5, roman: 'V'},
+		{arabic: 1, roman: 'I'},
+	];
 
 	function generate(number){
-		return ROMAN_NUMERALS[number];
+		for(var i =0; i <= ROMAN_NUMERALS.length; i++){
+			if(ROMAN_NUMERALS[i].arabic === number ){
+				return ROMAN_NUMERALS[i].roman;
+			}
+		}
 	}
 
 	return{
