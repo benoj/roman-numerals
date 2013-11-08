@@ -81,20 +81,23 @@ describe('When I want to convert arabic numbers to roman numerals',function(){
 		assert.equal(romanNumeral,'IV');
 	});
 
-	// it('and that number is 0 then an error is thrown',function(){
-	// 	var romanNumeralGenerator = new RomanNumeralGenerator();
+	it('and that number is 0 then an error is thrown',function(){
+		var romanNumeralGenerator = new RomanNumeralGenerator();
 
-	// 	assert.throws(function(){
-	// 		romanNumeralGenerator.generate(0);
-	// 		},
-	// 		/Only numbers between 1 and 3999 may be converted/
-	// 	);
-	// })
+		assert.throws(function(){
+			romanNumeralGenerator.generate(0);
+			},
+			/Only numbers between 1 and 3999 may be converted/
+		);
+	})
 
 });
 
 var RomanNumeralGenerator = function(){
 	function generate(number){
+		if(number < 1){
+			throw new Error("Only numbers between 1 and 3999 may be converted");
+		}
 		return generateRoman(number);
 	}
 
