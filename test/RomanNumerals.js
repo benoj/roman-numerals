@@ -17,9 +17,6 @@ describe('When I want to convert arabic numbers to roman numerals',function(){
 });
 
 var RomanNumeralGenerator = function(){
-	var ROMAN_ONE = 'I',
-		ROMAN_FIVE = 'V';
-
 	var ROMAN_NUMERALS = {
 		1: 'I',
 		5: 'V'
