@@ -29,12 +29,6 @@ describe('When I want to convert arabic numbers to roman numerals',function(){
 });
 
 var RomanNumeralGenerator = function(){
-	var ROMAN_NUMERALS = [
-		{arabic: 10, roman: 'X'},
-		{arabic: 5, roman: 'V'},
-		{arabic: 1, roman: 'I'},
-	];
-
 	function generate(number){
 		var romanNumeral = new RomanNumeralRepository().findClosest(number);
 		if(romanNumeral){
