@@ -14,12 +14,19 @@ describe('When I want to convert arabic numbers to roman numerals',function(){
 			romanNumeral = romanNumeralGenerator.generate(5);
 		assert.equal(romanNumeral,'V');
 	});
+
+	it('and that number is 10 then the roman is X',function(){
+		var romanNumeralGenerator = new RomanNumeralGenerator(),
+			romanNumeral = romanNumeralGenerator.generate(10);
+		assert.equal(romanNumeral,'X');
+	});
 });
 
 var RomanNumeralGenerator = function(){
 	var ROMAN_NUMERALS = {
 		1: 'I',
-		5: 'V'
+		5: 'V',
+		10: 'X'
 	};
 
 	function generate(number){
