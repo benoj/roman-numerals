@@ -17,11 +17,12 @@ describe('When I want to convert arabic numbers to roman numerals',function(){
 });
 
 var RomanNumeralGenerator = function(){
-	var ROMAN_ONE = 'I';
+	var ROMAN_ONE = 'I',
+		ROMAN_FIVE = 'V';
 
 	function generate(number){
 		if(number === 5){
-			return 'V'
+			return ROMAN_FIVE;
 		}	
 		return ROMAN_ONE;
 	}
